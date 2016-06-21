@@ -16,5 +16,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'devise'
 gem 'font-awesome-sass', '~> 4.5.0'
