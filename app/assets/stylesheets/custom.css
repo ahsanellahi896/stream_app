@@ -1,0 +1,44 @@
+.footer {
+  position: relative;
+  text-align: center;
+  height: 200px;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.imgpos{
+  position: relative;
+  top:5px;
+  padding-right: 200px;
+}
+
+html {
+  background: url('/assets/bg01.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ad-container {
+  width: 100%;
+}
+
+.ad {
+  border: 1px solid black;
+  width: 32.2%;
+  margin: .3%;
+  float: left;
+}
+
+.ad-container:after {
+  display: table;
+  content: "";
+  clear: both;
+}
