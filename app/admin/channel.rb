@@ -43,7 +43,7 @@ ActiveAdmin.register Channel do
     f.inputs "Details" do
       f.input :name
       f.input :description
-      f.input :category, as: :select, collection: ['news', 'movies'], include_blank: false
+      f.input :category, as: :select, collection: %w(news business sports general), include_blank: false
       f.input :embed_code
       f.has_many :image, allow_destroy: true do |ff|
         ff.input :photo, as: :file, hint: ff.object.photo.url ? image_tag(ff.object.photo.url(:medium)) : ''
