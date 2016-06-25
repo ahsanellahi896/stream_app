@@ -22,3 +22,5 @@ gem 'devise'
 gem 'font-awesome-sass', '~> 4.5.0'
 gem 'paperclip', '~> 4.3'
 gem 'thinking-sphinx', '~> 3.2.0'
+
+gem 'puma'

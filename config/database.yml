@@ -23,3 +23,5 @@ test:
 production:
   <<: *default
   database: stream_app_production
+  username: root
+  password:
