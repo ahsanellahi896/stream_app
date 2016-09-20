@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :channels, only: [:show]
+  resources :channels, only: [:show] do
+    collection do
+      get :all_by_category
+    end
+  end
 
   get 'news', to: 'static_pages#news', as: :news
   get 'business', to: 'static_pages#business', as: :business
