@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'channels/show'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
