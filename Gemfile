@@ -20,7 +20,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'font-awesome-sass', '~> 4.5.0'
 gem 'paperclip', '~> 4.3'
-gem 'rack-cors', require: 'rack/cors'
 gem 'thinking-sphinx', '~> 3.2.0'
 
 gem 'puma'
