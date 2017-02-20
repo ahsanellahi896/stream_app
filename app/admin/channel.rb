@@ -35,19 +35,20 @@ ActiveAdmin.register Channel do
 
   controller do
     def permitted_params
-      params.permit :utf8, :_method, :authenticity_token, :commit, :id, channel: [:name, :description, :category, :embed_code, image_attributes: [:photo]]
+      params.permit :utf8, :_method, :authenticity_token, :commit, :id, channel: [:name, :description, :category, :embed_code, image_attributes: [:id, :photo]]
     end
   end
 
-  form html: { enctype: "multipart/form-data" } do |f|
-    f.inputs "Details" do
+  form html: { multipart: true } do |f|
+    f.inputs 'Details' do
       f.input :name
       f.input :description
       f.input :category, as: :select, collection: %w(news business sports general), include_blank: false
       f.input :embed_code
-      f.has_many :image, allow_destroy: true do |ff|
-        ff.input :photo, as: :file, hint: ff.object.photo.url ? image_tag(ff.object.photo.url(:medium)) : ''
-      end
+    end
+
+    f.inputs name: 'Image', for: :image, allow_destroy: true do |ff|
+      ff.input :photo, as: :file, hint: ff.object.photo.url ? image_tag(ff.object.photo.url(:medium)) : ''
     end
 
     f.actions
