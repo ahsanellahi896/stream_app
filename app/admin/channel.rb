@@ -47,8 +47,12 @@ ActiveAdmin.register Channel do
       f.input :embed_code
     end
 
-    f.inputs name: 'Image', for: f.object.image || f.object.build_image, allow_destroy: true do |ff|
-      ff.input :photo, as: :file, hint: ff.object.photo.url ? image_tag(ff.object.photo.url(:medium)) : ''
+    f.inputs 'Image' do
+      image = f.object.image || f.object.build_image
+
+      f.semantic_fields_for :image, allow_destroy: true do |ff|
+        ff.input :photo, as: :file, hint: ff.object.photo.url ? image_tag(ff.object.photo.url(:medium)) : ''
+      end
     end
 
     f.actions
